@@ -6,10 +6,10 @@ const path = require('path');
 const app = express();
 const server = http.createServer(app);
 
-// Initialize Socket.IO
+// Initialize Socket.IO with proper CORS
 const io = require('socket.io')(server, {
   cors: {
-    origin: "*", // Allow all (or replace with your Vercel/Netlify URL later)
+    origin: ["https://kbc-for-raison-2025.vercel.app", "http://localhost:3000"], // ✅ Allow your Vercel site
     methods: ["GET", "POST"]
   }
 });
