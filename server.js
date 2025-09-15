@@ -9,7 +9,7 @@ const server = http.createServer(app);
 // Initialize Socket.IO with proper CORS
 const io = require('socket.io')(server, {
   cors: {
-    origin: ["https://kbc-for-raison-2025.vercel.app", "http://localhost:3000"], // ✅ Allow your Vercel site
+    origin: "*", // ❌ Too permissive — can be unsafe
     methods: ["GET", "POST"]
   }
 });
